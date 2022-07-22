@@ -1,0 +1,15 @@
+h3{
+    font-size: 25px !important;
+}
+.btn_success:hover{
+  background-color: red;
+}
+
+canvas{
+    border-color: aqua;
+    border-style: dashed;
+    border-width: 8px;
+    
+    
+}
+
