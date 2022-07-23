@@ -1,7 +1,8 @@
 nose_x= 0;
 nose_y= 0;
 function preload(){
-    img=""
+ mustache= loadImage("mustache.png");
+        
 }
 function setup(){
     canvas= createCanvas(400,400);
@@ -20,6 +21,8 @@ function modelLoaded(){
 
 function draw(){
     image(video , 0 , 0 , 400 ,400);
+    imageMode(CENTER);
+    image(mustache,nose_x , nose_y ,30,30);
 }
 
 
@@ -30,6 +33,8 @@ function take_snapshot(){
 function gotPoses(results){
     if (results.length>0){
         console.log(results);
+        nose_x= (results[0].pose.nose.x)-5;
+        nose_y= results[0].pose.nose.y;
         console.log("nose_x = "+results[0].pose.nose.x);
         console.log("nose_y = "+results[0].pose.nose.y);
     }
